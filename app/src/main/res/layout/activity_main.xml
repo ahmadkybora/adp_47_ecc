@@ -24,6 +24,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:text="skip"
+        android:elevation="6dp"
         android:textAllCaps="false"
         android:textColor="@color/colorGray"
         android:background="@drawable/skip_button"
@@ -41,7 +42,80 @@
         app:layout_constraintTop_toTopOf="@id/button"
         app:srcCompat="@drawable/food" />
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/linear_corners"
+        android:elevation="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:src="@drawable/phone" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="359dp"
+        android:layout_height="41dp"
+        android:text="please select me"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linear2"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/linear2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.971" />
+
+    <TextView
+        android:layout_width="371dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:text="Continue with phone"
+        android:textColor="@color/colorBlack"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="477dp" />
+
+    <TextView
+        android:layout_width="377dp"
+        android:layout_height="58dp"
+        android:layout_gravity="center"
+        android:text="Continue with Email"
+        android:textColor="@color/colorBlack"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="379dp"
+        android:layout_height="0dp"
+        android:background="@drawable/linear_corners"
+        android:elevation="16dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="472dp">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:src="@drawable/email" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

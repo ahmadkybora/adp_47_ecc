@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -48,5 +49,25 @@ public class MainActivity extends AppCompatActivity {
         plateAdapter = new PlateAdapter(plateModelList, this);
         recyclerView.setAdapter(plateAdapter);
         plateAdapter.notifyDataSetChanged();
+
+        autoScroll();
+    }
+
+    private void autoScroll() {
+        final int speedScroll = 0;
+        final Handler handler = new Handler();
+        final Runnable runnable = new Runnable() {
+            int count = 0;
+            @Override
+            public void run() {
+                if(count == plateAdapter.getItemCount())
+                    count=0;
+                if(count < plateAdapter.getItemCount()) {
+                    recyclerView.smoothScrollToPosition(++count);
+                    handler.postDelayed(this, speedScroll);
+                }
+            }
+        };
+        handler.postDelayed(runnable, speedScroll);
     }
 }
