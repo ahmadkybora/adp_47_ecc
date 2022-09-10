@@ -9,7 +9,9 @@
         <entry key="app/src/main/res/drawable/linear_corners.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/phone.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/skip_button.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_email_login.xml" value="0.1765625" />
+        <entry key="app/src/main/res/layout/activity_email_register.xml" value="0.1765625" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1765625" />
         <entry key="app/src/main/res/layout/activity_splash2.xml" value="0.1765625" />
         <entry key="app/src/main/res/layout/layout_plates.xml" value="0.15" />

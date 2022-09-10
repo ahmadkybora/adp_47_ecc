@@ -4,6 +4,7 @@
     package="com.example.adp_47_ecc">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,7 +15,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Adp_47_ecc"
         tools:targetApi="31">
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".EmailRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EmailLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +30,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" android:exported="true"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
