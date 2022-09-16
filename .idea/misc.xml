@@ -10,11 +10,16 @@
         <entry key="app/src/main/res/drawable/phone.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/skip_button.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_email_login.xml" value="0.1765625" />
-        <entry key="app/src/main/res/layout/activity_email_register.xml" value="0.1765625" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_email_register.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.1111111111111111" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_phon_login.xml" value="0.1111111111111111" />
+        <entry key="app/src/main/res/layout/activity_phone_login.xml" value="0.17" />
+        <entry key="app/src/main/res/layout/activity_phone_register.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1765625" />
         <entry key="app/src/main/res/layout/activity_splash2.xml" value="0.1765625" />
         <entry key="app/src/main/res/layout/layout_plates.xml" value="0.15" />
+        <entry key="app/src/main/res/menu/menue.xml" value="0.21" />
       </map>
     </option>
   </component>

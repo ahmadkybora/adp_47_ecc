@@ -1,4 +1,4 @@
-package com.example.adp_47_ecc.EmailLoginRegister;
+package com.example.adp_47_ecc.PhoneLoginRegister;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,15 +10,16 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
+import com.example.adp_47_ecc.EmailLoginRegister.EmailRegisterActivity;
 import com.example.adp_47_ecc.MainActivity;
 import com.example.adp_47_ecc.R;
 
-public class EmailRegisterActivity extends AppCompatActivity {
+public class PhoneRegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_email_register);
+        setContentView(R.layout.activity_phone_register);
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window w = getWindow();
@@ -27,14 +28,14 @@ public class EmailRegisterActivity extends AppCompatActivity {
     }
 
     public void goToLogin(View view) {
-        Intent intent = new Intent(EmailRegisterActivity.this, EmailLoginActivity.class);
+        Intent intent = new Intent(PhoneRegisterActivity.this, PhoneLoginActivity.class);
         startActivity(intent);
-        Animatoo.animateSwipeLeft(this);
+        Animatoo.animateSlideUp(this);
         finish();
     }
 
     public void backToMainPage(View view) {
-        Intent intent = new Intent(EmailRegisterActivity.this, MainActivity.class);
+        Intent intent = new Intent(PhoneRegisterActivity.this, MainActivity.class);
         startActivity(intent);
         Animatoo.animateSwipeRight(this);
         finish();

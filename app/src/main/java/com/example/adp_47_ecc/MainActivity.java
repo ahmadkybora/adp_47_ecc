@@ -4,14 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 
+import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.adp_47_ecc.Adapters.PlateAdapter;
+import com.example.adp_47_ecc.EmailLoginRegister.EmailLoginActivity;
 import com.example.adp_47_ecc.Models.PlateModel;
+import com.example.adp_47_ecc.PhoneLoginRegister.PhoneLoginActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,17 +26,25 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<PlateModel> plateModelList;
     private PlateAdapter plateAdapter;
+    private LinearLayout emailContinue, phoneContinue;
+    private LinearLayout emailContinueBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ////checker//
+//        try {
+//            AppUpdateChecker
+//        }
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window w = getWindow();
             w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
 
+        phoneContinue = (LinearLayout) findViewById(R.id.linear1);
+        emailContinue = (LinearLayout) findViewById(R.id.linear2);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.HORIZONTAL);
@@ -51,6 +65,24 @@ public class MainActivity extends AppCompatActivity {
         plateAdapter.notifyDataSetChanged();
 
         autoScroll();
+
+        phoneContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, PhoneLoginActivity.class);
+                startActivity(intent);
+                Animatoo.animateSlideDown(MainActivity.this);
+            }
+        });
+
+        emailContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, EmailLoginActivity.class);
+                startActivity(intent);
+                Animatoo.animateSlideDown(MainActivity.this);
+            }
+        });
     }
 
     private void autoScroll() {
@@ -69,5 +101,12 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         handler.postDelayed(runnable, speedScroll);
+    }
+
+    public void goToHomePage(View view) {
+        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+        startActivity(intent);
+        Animatoo.animateWindmill(this);
+        finish();
     }
 }

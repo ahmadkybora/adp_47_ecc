@@ -16,10 +16,20 @@
         android:theme="@style/Theme.Adp_47_ecc"
         tools:targetApi="31">
         <activity
-            android:name=".EmailRegisterActivity"
+            android:name=".HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".EmailLoginActivity"
+            android:name=".PhoneLoginRegister.PhoneRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PhoneLoginRegister.PhoneLoginActivity"
+            android:exported="false"
+            tools:ignore="MissingClass" />
+        <activity
+            android:name=".EmailLoginRegister.EmailRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EmailLoginRegister.EmailLoginActivity"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
