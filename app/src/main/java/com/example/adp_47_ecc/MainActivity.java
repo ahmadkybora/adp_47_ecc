@@ -38,10 +38,7 @@ public class MainActivity extends AppCompatActivity {
 //        try {
 //            AppUpdateChecker
 //        }
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         phoneContinue = (LinearLayout) findViewById(R.id.linear1);
         emailContinue = (LinearLayout) findViewById(R.id.linear2);

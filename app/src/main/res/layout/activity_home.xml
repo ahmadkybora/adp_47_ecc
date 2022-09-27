@@ -6,13 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
 <com.google.android.material.bottomnavigation.BottomNavigationView
     android:id="@+id/bottomNavigation"
     app:menu="@menu/menu"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:itemTextColor="@color/colorDarkGray"
-    app:itemIconTint="@color/colorDarkGray"
+    app:itemIconTint="@color/color"
     app:labelVisibilityMode="labeled"
     tools:ignore="MissingConstraints"
     app:layout_constraintBottom_toBottomOf="parent"
