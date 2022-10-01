@@ -16,12 +16,21 @@ import android.widget.Toast;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
 import com.example.adp_47_ecc.MainActivity;
+import com.example.adp_47_ecc.PhoneLoginRegister.PhoneRegisterActivity;
 import com.example.adp_47_ecc.R;
+import com.example.adp_47_ecc.RetrofitApi.ApiClient;
+import com.example.adp_47_ecc.RetrofitApi.ApiInterface;
+import com.example.adp_47_ecc.RetrofitApi.Users;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class EmailLoginActivity extends AppCompatActivity {
 
     private EditText email, password;
     private Button btnLogin;
+    public static ApiInterface apiInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +38,8 @@ public class EmailLoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_email_login);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
         init();
     }
@@ -66,6 +77,35 @@ public class EmailLoginActivity extends AppCompatActivity {
             dialog.show();
             dialog.setCanceledOnTouchOutside(false);
 
+            Call<Users> call = apiInterface.performEmailLogin(user_email, user_password);
+            call.enqueue(new Callback<Users>() {
+                @Override
+                public void onResponse(Call<Users> call, Response<Users> response) {
+                    if(response.body().getResponse().equals("ok"))
+                    {
+                        String user_id = response.body().getUserId();
+                        Toast.makeText(EmailLoginActivity.this, user_id, Toast.LENGTH_SHORT).show();
+
+                        Toast.makeText(EmailLoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                    else if(response.body().getResponse().equals("no_account"))
+                    {
+                        Toast.makeText(EmailLoginActivity.this, "No Account Found", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                    else if(response.body().getResponse().equals("already"))
+                    {
+                        Toast.makeText(EmailLoginActivity.this, "This email is already taken", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<Users> call, Throwable t) {
+                    Toast.makeText(EmailLoginActivity.this, "wrong", Toast.LENGTH_SHORT).show();
+                }
+            });
             Toast.makeText(EmailLoginActivity.this, "Success", Toast.LENGTH_SHORT).show();
         }
     }
