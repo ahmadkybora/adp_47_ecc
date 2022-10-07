@@ -1,5 +1,6 @@
 package com.example.adp_47_ecc.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -13,6 +14,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.blogspot.atifsoftwares.animatoolib.Animatoo;
+import com.example.adp_47_ecc.MainActivity;
 import com.example.adp_47_ecc.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -113,5 +116,12 @@ public class GoldFragment extends Fragment implements View.OnClickListener{
                 Toast.makeText(getContext(), "rate_playstore", Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    private void Login() {
+        Intent intent = new Intent(getContext(), MainActivity.class);
+        startActivity(intent);
+        getActivity().finish();
+        Animatoo.animateSwipeLeft(getContext());
     }
 }

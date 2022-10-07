@@ -12,6 +12,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
@@ -32,6 +33,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
     private Button btnLogin, btnOtp;
     public static ApiInterface apiInterface;
 
+    ImageView dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +51,8 @@ public class PhoneLoginActivity extends AppCompatActivity {
         otp = (EditText) findViewById(R.id.otp);
         btnLogin = (Button) findViewById(R.id.button2);
         btnOtp = (Button) findViewById(R.id.button3);
+
+        dialog = (ImageView) findViewById(R.id.imageView4);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override

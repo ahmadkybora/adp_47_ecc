@@ -3,6 +3,7 @@ package com.example.adp_47_ecc;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -10,16 +11,25 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.example.adp_47_ecc.Adapters.CatAdapter;
 import com.example.adp_47_ecc.Fragments.GoOutFragment;
 import com.example.adp_47_ecc.Fragments.GoldFragment;
 import com.example.adp_47_ecc.Fragments.OrdersFragment;
 import com.example.adp_47_ecc.Fragments.VideosFragment;
+import com.example.adp_47_ecc.Models.CategoryModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     FrameLayout frameLayout;
+
+    private RecyclerView recyclerView;
+    private CatAdapter catAdapter;
+    private List<CategoryModel> categoryModelList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

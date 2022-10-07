@@ -21,6 +21,7 @@ import com.example.adp_47_ecc.R;
 import com.example.adp_47_ecc.RetrofitApi.ApiClient;
 import com.example.adp_47_ecc.RetrofitApi.ApiInterface;
 import com.example.adp_47_ecc.RetrofitApi.Users;
+import com.example.adp_47_ecc.Sessions.SessionManager;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,6 +32,8 @@ public class EmailLoginActivity extends AppCompatActivity {
     private EditText email, password;
     private Button btnLogin;
     public static ApiInterface apiInterface;
+    String user_id;
+    SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +43,7 @@ public class EmailLoginActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
-
+        sessionManager = new SessionManager(this);
         init();
     }
 

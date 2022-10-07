@@ -1,9 +1,12 @@
 package com.example.adp_47_ecc.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +17,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.blogspot.atifsoftwares.animatoolib.Animatoo;
+import com.example.adp_47_ecc.Adapters.CatAdapter;
+import com.example.adp_47_ecc.MainActivity;
+import com.example.adp_47_ecc.Models.CategoryModel;
 import com.example.adp_47_ecc.R;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,8 +42,10 @@ public class OrdersFragment extends Fragment implements View.OnClickListener {
     ImageView navigationBar;
     NavigationView navigationView;
     private View view;
-    private RelativeLayout loginSignUp, bookmarks, eightMMGold;
-    private TextView your_orders, favourite_orders, address_book, online_ordering_help, send_feedback, report_safety_emergency, rate_playstore;
+    private RelativeLayout loginSignUp, bookmarks, eightMMGold, logout;
+    private TextView your_orders, favourite_orders, address_book, online_ordering_help, send_feedback, report_safety_emergency, rate_playstore, login;
+    private RecyclerView recyclerView;
+    private List<CategoryModel> categoryModelList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,15 +54,33 @@ public class OrdersFragment extends Fragment implements View.OnClickListener {
         view = inflater.inflate(R.layout.fragment_orders, container, false);
 
         onSetNavigationDrawerEvents();
+        init();
         return view;
     }
 
+    private void init() {
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setOrientation(RecyclerView.HORIZONTAL);
+        recyclerView.setLayoutManager(layoutManager);
+
+        categoryModelList = new ArrayList<>();
+//        categoryModelList.add(new CategoryModel(R.drawable.search));
+//        categoryModelList.add(new CategoryModel(R.drawable.search));
+//        categoryModelList.add(new CategoryModel(R.drawable.search));
+//        categoryModelList.add(new CategoryModel(R.drawable.search));
+//        categoryModelList.add(new CategoryModel(R.drawable.search));
+//        catAdapter = new CatAdapter(categoryModelList, getContext());
+//        recyclerView.setAdapter(catAdapter);
+//        catAdapter.notifyDataSetChanged();
+    }
     private void onSetNavigationDrawerEvents() {
         drawerLayout = (DrawerLayout) view.findViewById(R.id.drawerLayout);
         navigationView = (NavigationView) view.findViewById(R.id.navigationView);
 
         navigationBar = (ImageView) view.findViewById(R.id.navigationBar);
 
+        logout = (RelativeLayout) view.findViewById(R.id.logout);
         loginSignUp = (RelativeLayout) view.findViewById(R.id.relativeLayout2);
         bookmarks = (RelativeLayout) view.findViewById(R.id.relativeLayout3);
         eightMMGold = (RelativeLayout) view.findViewById(R.id.relativeLayout4);
@@ -65,6 +95,7 @@ public class OrdersFragment extends Fragment implements View.OnClickListener {
 
         navigationBar.setOnClickListener(this);
         loginSignUp.setOnClickListener(this);
+        logout.setOnClickListener(this);
         bookmarks.setOnClickListener(this);
         eightMMGold.setOnClickListener(this);
 
@@ -82,6 +113,9 @@ public class OrdersFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()){
             case R.id.navigationBar:
                 drawerLayout.openDrawer(navigationView, true);
+                break;
+            case R.id.logout:
+                Logout();
                 break;
             case R.id.relativeLayout2:
                 Toast.makeText(getContext(), "loginSignUp", Toast.LENGTH_SHORT).show();
@@ -114,5 +148,12 @@ public class OrdersFragment extends Fragment implements View.OnClickListener {
                 Toast.makeText(getContext(), "rate_playstore", Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    private void Logout() {
+        Intent intent = new Intent(getContext(), MainActivity.class);
+        startActivity(intent);
+        getActivity().finish();
+        Animatoo.animateSwipeRight(getContext());
     }
 }
