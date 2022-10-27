@@ -5,19 +5,28 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/address.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/back_button_icon.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/basket.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/chat.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/email.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/email_icon.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/favorite.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/gold.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/goout.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/linear_corners.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/orders.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/phone.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/phone_icon.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/right_arrow.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/search.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/skip_button.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/videos.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_email_login.xml" value="0.15" />
         <entry key="app/src/main/res/layout/activity_email_register.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.21" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_phon_login.xml" value="0.1111111111111111" />
         <entry key="app/src/main/res/layout/activity_phone_login.xml" value="0.17" />
         <entry key="app/src/main/res/layout/activity_phone_register.xml" value="0.18" />
